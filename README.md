@@ -1,6 +1,8 @@
-## Diagrama de Classes Inicial
 
-    ```` class Usuario {
+## Diagrama de Classes Inicial
+```mermaid
+classDiagram
+    class Usuario {
         +int id
         +string nome
         +string email
@@ -22,7 +24,7 @@
         +datetime dataPostagem
         +int usuarioId
         +int animacaoId
-    } ````
+    }
 
     Usuario "1" --> "*" Comentario : escreve
     Animacao "1" --> "*" Comentario : recebe
