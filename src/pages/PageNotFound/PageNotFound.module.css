@@ -1,0 +1,35 @@
+.pagenotfound{
+    align-items: center;    
+    margin-top: 10%;
+    text-align: center;
+}
+
+.pagenotfound img{
+    width: 20%;
+    margin-bottom: 5.1%;
+    animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+.pagenotfound h1{
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.pagenotfound h2{
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 4%;
+}
+
+
+  
