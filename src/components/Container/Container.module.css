@@ -1,0 +1,39 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 2%;
+    margin-block: 4%;
+}
+
+.container img{
+    width: 45%;
+    height: 80vh;
+    border-radius: 20px;
+    margin-left: 4%;
+    object-fit: cover;
+}
+
+.container h1{
+    font-size: 6rem;
+    margin-left: 4%;
+    color: #000000;
+    font-weight: 500;
+    margin-right: 35%;
+    text-transform: uppercase;
+}
+
+.container h2{
+    font-size: 4rem;
+    margin-left: 4%;
+    font-weight: 400;
+    margin-right: 25%;
+    margin-bottom: 12%;
+}
+
+.container span{
+    padding: 10% 40% 10% 40%;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, #FFC107, #FF9800);
+    margin-left: 4%;
+}
