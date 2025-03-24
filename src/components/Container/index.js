@@ -43,7 +43,7 @@ function Container(){
                     <h1>Bem vindo ao Anime Navs!</h1>
                     <h2>Seu site de recomendações e feedbacks dos animes mais assistidos do momento</h2>
                 </div>
-                <span>Indicação do dia!</span>
+                <span>Indicação da semana!</span>
             </div>
         </section>
     );

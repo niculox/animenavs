@@ -1,6 +1,14 @@
+import style from './Indication.module.css';
+
 function Indication() {
   return (
-      <h1>Indication</h1>
+      <>
+        <Header />
+          <div className={style.indication}>
+            
+          </div>
+        <Footer />
+      </>
   );
 }
 
