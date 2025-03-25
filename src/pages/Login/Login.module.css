@@ -1,12 +1,8 @@
-body, html {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
+.login{
+    margin: 7% 20% 0 20%;
 }
 
-.login{
+.login div{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,14 +41,14 @@ body, html {
     padding-block: 4%;
     margin-bottom: 3%;
     border-radius: 25px;
-    padding-left: 2%;
-    font-size: 2.5rem;
+    padding-left: 4%;
+    font-size: 2rem;
 }
 
 .login button{
     padding-block: 4%;
     border-radius: 25px;
-    font-size: 2.5rem;
+    font-size: 2rem;
     background-color: rgb(217, 255, 242);
     text-transform: uppercase;
     align-items: baseline;
