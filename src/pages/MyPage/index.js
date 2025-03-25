@@ -9,7 +9,7 @@ function MyPage() {
         <Header />
         <Banner />
           <div className={style.mypage}>
-
+            
           </div>
         <Footer />
       </>
