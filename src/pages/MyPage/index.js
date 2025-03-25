@@ -12,7 +12,6 @@ function MyPage() {
           <div className={style.mypage}>
             <img src={ foto } alt="foto-perfil-niculos" />
             <h1>niculos</h1>
-            <h2>Recomendações salvas</h2>
             <p>"Recomendações"</p>
           </div>
         <Footer />
