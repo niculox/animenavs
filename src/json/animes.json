@@ -1,0 +1,250 @@
+[
+    {
+        "id": 1,
+        "titulo": "Attack on Titan",
+        "genero": "Ação",
+        "descricao": "A humanidade luta contra titãs que ameaçam sua sobrevivência.",
+        "estrelas": 5,
+        "imagem": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=cover,format=auto,quality=85,width=1920/keyart/GR751KNZY-backdrop_wide"
+    },
+    {
+        "id": 2,
+        "titulo": "Demon Slayer",
+        "genero": "Ação, Fantasia",
+        "descricao": "Um jovem lutador se junta a uma organização para salvar sua irmã e derrotar demônios.",
+        "estrelas": 5,
+        "imagem": "https://mh1.com.br/wp-content/uploads/2024/07/Demon-Slayer.jpg"
+    },
+    {
+        "id": 3,
+        "titulo": "Jujutsu Kaisen",
+        "genero": "Ação, Sobrenatural",
+        "descricao": "Um estudante consome uma relíquia amaldiçoada e se junta a uma escola de feitiçaria para lutar contra maldições.",
+        "estrelas": 4.5,
+        "imagem": "https://t.ctcdn.com.br/lK2IJ2b_5MYl9K55ULN3C1uxmSo=/1024x576/smart/i975461.jpeg"
+    },
+    {
+        "id": 4,
+        "titulo": "My Hero Academia",
+        "genero": "Ação, Aventura",
+        "descricao": "Em um mundo onde a maioria das pessoas possui superpoderes, um garoto sem habilidades se esforça para se tornar um herói.",
+        "estrelas": 4.5,
+        "imagem": "https://istoe.com.br/istoegeral/wp-content/uploads/2025/03/3ILMlmC30QUnYkY3XEBOyJ82Dqu-1-1200x675.jpg"
+    },
+    {
+        "id": 5,
+        "titulo": "One Piece",
+        "genero": "Aventura, Fantasia",
+        "descricao": "Um jovem pirata busca o tesouro lendário conhecido como One Piece para se tornar o Rei dos Piratas.",
+        "estrelas": 5,
+        "imagem": "https://sm.ign.com/t/ign_br/screenshot/default/ign_3mqt.1200.png"
+    },
+    {
+        "id": 6,
+        "titulo": "Chainsaw Man",
+        "genero": "Ação, Horror",
+        "descricao": "Um jovem que se transforma em um homem-serra luta contra demônios para pagar suas dívidas.",
+        "estrelas": 4.5,
+        "imagem": "https://conectageek.com.br/wp-content/uploads/2025/02/Chainsaw-man-anime.jpg"
+    },
+    {
+        "id": 7,
+        "titulo": "Spy x Family",
+        "genero": "Comédia, Ação",
+        "descricao": "Um espião deve formar uma família falsa para completar sua missão, sem saber que sua esposa é uma assassina.",
+        "estrelas": 4.8,
+        "imagem": "https://animeflix.com.br/wp-content/uploads/2025/02/spy-x-family.jpg"
+    },
+    {
+        "id": 8,
+        "titulo": "Tokyo Revengers",
+        "genero": "Ação, Drama",
+        "descricao": "Um jovem volta no tempo para salvar sua namorada e mudar seu destino.",
+        "estrelas": 4.7,
+        "imagem": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/7923a0407dbdba324c56acec9f096c13.jpg"
+    },
+    {
+        "id": 9,
+        "titulo": "Mob Psycho 100",
+        "genero": "Ação, Comédia",
+        "descricao": "Um jovem psíquico tenta viver uma vida normal enquanto lida com espíritos e emoções.",
+        "estrelas": 4.6,
+        "imagem": "https://tm.ibxk.com.br/2024/06/20/20162942209218.jpg"
+    },
+    {
+        "id": 10,
+        "titulo": "Vinland Saga",
+        "genero": "Ação, Aventura",
+        "descricao": "Um jovem guerreiro busca vingança em um mundo de vikings.",
+        "estrelas": 4.9,
+        "imagem": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=cover,format=auto,quality=85,width=1920/keyart/GEXH3WKK0-backdrop_wide"
+    },
+    {
+        "id": 11,
+        "titulo": "Blue Lock",
+        "genero": "Esporte, Drama",
+        "descricao": "Um grupo de jovens jogadores de futebol compete para se tornar o melhor atacante do Japão.",
+        "estrelas": 4.5,
+        "imagem": "https://mh1.com.br/wp-content/uploads/2024/03/1c7673199fafc72304080c0811a5ff1b7bb18bb59631ec51dca09853e2344629.jpg"
+    },
+    {
+        "id": 12,
+        "titulo": "Fate/Grand Order",
+        "genero": "Ação, Fantasia",
+        "descricao": "Mestres e servos lutam em uma batalha épica para obter o Graal.",
+        "estrelas": 4.4,
+        "imagem": "https://criticalhits.com.br/wp-content/uploads/2023/09/collage-maker-08-sep-2023-11-21.jpg"
+    },
+    {
+        "id": 13,
+        "titulo": "Re:Zero - Starting Life in Another World",
+        "genero": "Aventura, Fantasia",
+        "descricao": "Um jovem é transportado para um mundo de fantasia e descobre que pode voltar no tempo após a morte.",
+        "estrelas": 4.8,
+        "imagem": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=cover,format=auto,quality=85,width=1920/keyart/GRGG9798R-backdrop_wide"
+    },
+    {
+        "id": 14,
+        "titulo": "Sword Art Online",
+        "genero": "Ação, Aventura",
+        "descricao": "Jogadores ficam presos em um jogo de realidade virtual e devem completar o jogo para escapar.",
+        "estrelas": 4.7,
+        "imagem": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=cover,format=auto,quality=85,width=1920/keyart/GR49G9VP6-backdrop_wide"
+    },
+    {
+        "id": 15,
+        "titulo": "The Rising of the Shield Hero",
+        "genero": "Ação, Fantasia",
+        "descricao": "Um homem é convocado para um mundo de fantasia como o herói do escudo e deve lutar contra monstros.",
+        "estrelas": 4.6,
+        "imagem": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=cover,format=auto,quality=85,width=1920/keyart/G6W4QKX0R-backdrop_wide"
+    },
+    {
+        "id": 16,
+        "titulo": "That Time I Got Reincarnated as a Slime",
+        "genero": "Fantasia, Aventura",
+        "descricao": "Um homem é reencarnado como um slime em um mundo de fantasia e ganha habilidades poderosas.",
+        "estrelas": 4.5,
+        "imagem": "https://animeflix.com.br/wp-content/uploads/2025/01/That-Time-I-Got-Reincarnated-As-A-Slime-1.jpg"
+    },
+    {
+        "id": 17,
+        "titulo": "Kaguya-sama: Love Is War",
+        "genero": "Comédia, Romance",
+        "descricao": "Dois estudantes de elite competem para fazer o outro confessar seu amor primeiro.",
+        "estrelas": 4.9,
+        "imagem": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=cover,format=auto,quality=85,width=1920/keyart/GRJ0J828Y-backdrop_wide"
+    },
+    {
+        "id": 18,
+        "titulo": "Death Note",
+        "genero": "Mistério, Suspense",
+        "descricao": "Um estudante encontra um caderno que permite matar qualquer pessoa cujo nome seja escrito nele.",
+        "estrelas": 5,
+        "imagem": "https://image.api.playstation.com/vulcan/ap/rnd/202410/1417/ca3be87df903b7a792c9e603ea375760f610bcb1d54237a8.jpg"
+    },
+    {
+        "id": 19,
+        "titulo": "Your Name",
+        "genero": "Romance, Fantasia",
+        "descricao": "Dois adolescentes trocam de corpo e tentam se encontrar em meio a eventos sobrenaturais.",
+        "estrelas": 4.8,
+        "imagem": "https://wallpapers.com/images/hd/red-strings-your-name-anime-2016-pm7cou3qzbcg0z8d.jpg"
+    },
+    {
+        "id": 20,
+        "titulo": "Steins;Gate",
+        "genero": "Ficção Científica, Thriller",
+        "descricao": "Um grupo de amigos descobre uma forma de enviar mensagens para o passado, alterando o futuro.",
+        "estrelas": 4.9,
+        "imagem": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=cover,format=auto,quality=85,width=1920/keyart/GYWE7W5GY-backdrop_wide"
+    },
+    {
+        "id": 21,
+        "titulo": "Noragami",
+        "genero": "Ação, Sobrenatural",
+        "descricao": "Um deus menor busca ganhar seguidores enquanto enfrenta espíritos malignos.",
+        "estrelas": 4.4,
+        "imagem": "https://static.wikia.nocookie.net/super-poderes/images/1/1f/Noragami.jpg/revision/latest?cb=20170129144727&path-prefix=pt-br"
+    },
+    {
+        "id": 22,
+        "titulo": "The Promised Neverland",
+        "genero": "Mistério, Suspense",
+        "descricao": "Crianças em um orfanato descobrem um segredo sombrio e tentam escapar.",
+        "estrelas": 4.8,
+        "imagem": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=cover,format=auto,quality=85,width=1920/keyart/GYVD2K1WY-backdrop_wide"
+    },
+    {
+        "id": 23,
+        "titulo": "Overlord",
+        "genero": "Ação, Fantasia",
+        "descricao": "Um jogador se torna seu personagem em um jogo de realidade virtual e busca dominar o mundo.",
+        "estrelas": 4.6,
+        "imagem": "https://animeflix.com.br/wp-content/uploads/2025/02/overlord.jpg"
+    },
+    {
+        "id": 24,
+        "titulo": "Fire Force",
+        "genero": "Ação, Sobrenatural",
+        "descricao": "Uma equipe de bombeiros luta contra humanos que se transformam em chamas.",
+        "estrelas": 4.5,
+        "imagem": "https://a.storyblok.com/f/178900/960x539/cece3890d1/fire-force-s3-pv.jpg/m/filters:quality(95)format(webp)"
+    },
+    {
+        "id": 25,
+        "titulo": "Mushoku Tensei: Jobless Reincarnation",
+        "genero": "Fantasia, Aventura",
+        "descricao": "Um NEET reencarna em um mundo de fantasia e decide viver sua vida ao máximo.",
+        "estrelas": 4.7,
+        "imagem": "https://m.media-amazon.com/images/S/pv-target-images/7730382bf4459ad9f445f7a7fe5b814c7ff22bbac43cf91667e6ea30c718fb12.jpg"
+    },
+    {
+        "id": 26,
+        "titulo": "Made in Abyss",
+        "genero": "Aventura, Fantasia",
+        "descricao": "Uma garota desce em um abismo misterioso em busca de sua mãe desaparecida.",
+        "estrelas": 4.9,
+        "imagem": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/532d3659db86ed0d86fcc57ef38acc45.jpg"
+    },
+    {
+        "id": 27,
+        "titulo": "Parasyte: The Maxim",
+        "genero": "Horror, Ação",
+        "descricao": "Um estudante luta contra parasitas que assumem o controle de humanos.",
+        "estrelas": 4.6,
+        "imagem": "https://conteudo.imguol.com.br/c/entretenimento/92/2024/04/15/cena-do-anime-parasyte-the-maxim-1713220033510_v2_750x421.jpg"
+    },
+    {
+        "id": 28,
+        "titulo": "KonoSuba: God's Blessing on This Wonderful World!",
+        "genero": "Comédia, Fantasia",
+        "descricao": "Um jovem é reencarnado em um mundo de fantasia e forma um grupo excêntrico de aventureiros.",
+        "estrelas": 4.8,
+        "imagem": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=cover,format=auto,quality=85,width=1920/keyart/GYE5K3GQR-backdrop_wide"
+    },
+    {
+        "id": 29,
+        "titulo": "Gintama",
+        "genero": "Ação, Comédia",
+        "descricao": "Um samurai vive em um mundo alternativo dominado por alienígenas e se envolve em várias aventuras.",
+        "estrelas": 4.7,
+        "imagem": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/5d1c34b8f9491d82bf62391f7ac4e4a3.jpg"
+    },
+    {
+        "id": 30,
+        "titulo": "Attack on Titan: The Final Season",
+        "genero": "Ação, Drama",
+        "descricao": "A batalha final pela liberdade da humanidade contra os titãs chega ao clímax.",
+        "estrelas": 5,
+        "imagem": "https://m.media-amazon.com/images/S/pv-target-images/741c6d9a1e0f27f865ff247284664a65609b895ef1ce9a8688f40a24345f8066.jpg"
+    },
+    {
+        "id": 31,
+        "titulo": "Hellsing Ultimate",
+        "genero": "Ação, Horror",
+        "descricao": "Uma organização secreta luta contra vampiros e outras criaturas sobrenaturais.",
+        "estrelas": 4.8,
+        "imagem": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=cover,format=auto,quality=85,width=1920/keyart/GYWEQ4Q3Y-backdrop_wide"
+    }
+]
