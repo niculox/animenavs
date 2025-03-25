@@ -1,8 +1,8 @@
 import imagem from "./imgcadastro.jpg";
-
+import style from "./Cadastro.module.css";
 function Cadastro(){
     return (
-        <>
+        <div className={style.cadastro}>
             <form>
                 <h1>Olá! Fico feliz em te ver aqui!</h1>
                 <h2>Preencha os campos para realizar seu cadastro.</h2>
@@ -12,10 +12,10 @@ function Cadastro(){
                 <input type="text" id="email" name="email" required/>
                 <label for="senha">Senha:</label>
                 <input type="text" id="senha" name="senha" required/>
-                <input type="submit" value="Entrar"/>
+                <input type="submit" value="Cadastrar"/>
             </form>
             <img src={imagem} alt="background-login"/>
-        </>
+        </div>
     );
 }
 

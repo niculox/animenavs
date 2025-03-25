@@ -1,8 +1,9 @@
 import imagem from "./imglogin.jpg";
+import style from "./Login.module.css";
 
 function Login(){
     return (
-        <>
+        <div className={ style.login }>
             <img src={imagem} alt="background-login"/>
             <form>
                 <h1>Bem vindo de volta!</h1>
@@ -10,9 +11,9 @@ function Login(){
                 <input type="text" id="username" name="username" required/>
                 <label for="senha">Senha:</label>
                 <input type="text" id="senha" name="senha" required/>
-                <input type="submit" value="Entrar"/>
+                <button id="logar" value="Entrar">Entrar</button>
             </form>
-        </>
+        </div>
     );
 }
 
