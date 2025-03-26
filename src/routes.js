@@ -4,6 +4,7 @@ import MyPage from "./pages/MyPage";
 import PageNotFound from "./pages/PageNotFound";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
+import Anime from "./pages/Anime";
 
 function AppRoutes(){
     return (
@@ -13,6 +14,7 @@ function AppRoutes(){
                 <Route path="/MyPage" element={ <MyPage /> }></Route>
                 <Route path="/Login" element={ <Login /> }></Route>
                 <Route path="/Cadastro" element={ <Cadastro /> }></Route>
+                <Route path="/anime/:id" element={ <Anime /> }></Route>
                 <Route path="*" element={ <PageNotFound /> }></Route>
             </Routes>
         </BrowserRouter>
