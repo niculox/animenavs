@@ -14,7 +14,7 @@ function AppRoutes(){
                 <Route path="/MyPage" element={ <MyPage /> }></Route>
                 <Route path="/Login" element={ <Login /> }></Route>
                 <Route path="/Cadastro" element={ <Cadastro /> }></Route>
-                <Route path="/anime/:id" element={ <Anime /> }></Route>
+                <Route path="/Anime/:id" element={ <Anime /> }></Route>
                 <Route path="*" element={ <PageNotFound /> }></Route>
             </Routes>
         </BrowserRouter>
