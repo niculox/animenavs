@@ -52,7 +52,7 @@ function Container(){
                 </div>
                 <Link to="/Indication" className={estilo.linkindication}>
                     <img src={currentAnime.imagem} alt={currentAnime.titulo} />
-                    <h2>{currentAnime.titulo}</h2>
+                    <h2>Weekly indication - {currentAnime.titulo}</h2>
                 </Link>
             </div>
         </section>
