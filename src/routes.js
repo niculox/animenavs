@@ -16,7 +16,7 @@ function AppRoutes(){
                 <Route path="/Login" element={ <Login /> }></Route>
                 <Route path="/Cadastro" element={ <Cadastro /> }></Route>
                 <Route path="/Anime/:id" element={ <Anime /> }></Route>
-                <Route path="/Indication/:id" element={ <Indication /> }></Route>
+                <Route path="/Indication/" element={ <Indication /> }></Route>
                 <Route path="*" element={ <PageNotFound /> }></Route>
             </Routes>
         </BrowserRouter>

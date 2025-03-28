@@ -8,13 +8,13 @@ import Estrelas from "../../components/Estrelas";
 
 function Anime() {
     const params = useParams();
-    const inf = anime.find((inf) => String(inf.id) === params.id);
+        const inf = anime.find((inf) => String(inf.id) === params.id);
 
     return (
         <>
             <Header />
             <div className={style.anime}>
-            <img src={inf.imagem} alt={inf.titulo} className={estilo.imagem}/>
+                <img src={inf.imagem} alt={inf.titulo} className={estilo.imagem}/>
                 <h1>{inf.titulo}</h1>
                 <Estrelas estrelas={inf.estrelas} />
                 <p>{inf.descricao}</p>
@@ -23,7 +23,5 @@ function Anime() {
         </>
     );
 }
-
-
 
 export default Anime;
