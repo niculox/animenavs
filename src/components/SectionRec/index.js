@@ -1,6 +1,18 @@
+import Footer from "../Footer";
+import Header from "../Header";
+
 function SectionRec(){
+
+    const anime = AnimeProvider;
+
     return (
-        <h1></h1>
+        <>
+        <Header />
+        <section className={ styles.indication }>
+
+        </section>
+        <Footer />
+        </>
     );
 }
 

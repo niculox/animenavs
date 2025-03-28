@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import Anime from "./pages/Anime";
 import Indication from "./pages/Indication";
+import Teste from "./pages/Teste";
 
 function AppRoutes(){
     return (
@@ -18,6 +19,7 @@ function AppRoutes(){
                 <Route path="/Anime/:id" element={ <Anime /> }></Route>
                 <Route path="/Indication/" element={ <Indication /> }></Route>
                 <Route path="*" element={ <PageNotFound /> }></Route>
+                <Route path="/Teste" element={ <Teste /> }></Route>
             </Routes>
         </BrowserRouter>
     );
