@@ -7,8 +7,8 @@ function Header() {
             <Link to="/"> <img src="/images/logoanimenavs.png" alt="logo-anime-navs"/> </Link>
             <nav>
                 <Link to="/">Home</Link>
-                <Link to="/MyPage">My Page</Link>
                 <Link to="/Indication">Weekly indication</Link>
+                <Link to="/MyPage">My Page</Link>
             </nav>      
         </header>
     );
