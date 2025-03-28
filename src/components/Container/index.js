@@ -33,8 +33,15 @@ import studioghibliaesthetic from "../../assets/studioghibliaesthetic.jpg";
 import totorochuva from "../../assets/totorochuva.jpg";
 import yhwa from "../../assets/yhwa.jpg";
 import yourname from "../../assets/yourname.jpg";
+import { useAnime } from '../../components/SectionRec';
+import { Link } from 'react-router-dom';
+import estilo from './Container.module.css';
 
 function Container(){
+
+    const currentAnime = useAnime();
+    if (!currentAnime) return null;
+
     return (
         <section className={style.container}>
             <img src={sorteiaCardContainer()} alt="card-image-anime" />
@@ -43,7 +50,10 @@ function Container(){
                     <h1>Bem vindo ao Anime Navs!</h1>
                     <h2>Seu site de recomendações e feedbacks dos animes mais assistidos do momento</h2>
                 </div>
-                <span>Indicação da semana!</span>
+                <Link to="/Indication" className={estilo.linkindication}>
+                    <img src={currentAnime.imagem} alt={currentAnime.titulo} />
+                    <h2>{currentAnime.titulo}</h2>
+                </Link>
             </div>
         </section>
     );
