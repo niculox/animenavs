@@ -8,6 +8,7 @@ function Header() {
             <nav>
                 <Link to="/">Home</Link>
                 <Link to="/MyPage">My Page</Link>
+                <Link to="/Indication">Weekly indication</Link>
             </nav>      
         </header>
     );
