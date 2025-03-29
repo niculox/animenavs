@@ -1,0 +1,39 @@
+.recomendacoes {
+    align-items: center;
+    text-align: center;
+    margin-top: -4%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.recomendacoes > a {
+    margin: 1%; /* Margem de 1% em todos os lados */
+    text-decoration: none;
+}
+
+.cardContainer { /* Novo contêiner para a imagem e o título */
+    position: relative; /* Permite que o título seja posicionado sobre a imagem */
+}
+
+.recomendacoes img {
+    width: 55vh;
+    height: 35vh;
+    border-radius: 20px;
+}
+
+.recomendacoes img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.titulo {
+    position: absolute; /* Posiciona o título sobre a imagem */
+    bottom: 1%; 
+    left: 1%; 
+    font-size: 3rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    z-index: 1; /* Garante que o título fique acima da imagem */
+}

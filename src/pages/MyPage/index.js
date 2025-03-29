@@ -1,9 +1,9 @@
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Banner from "../../components/Banner"
-import Cards from "../../components/Cards";
 import style from "./MyPage.module.css";
 import foto from "./niculos.png";
+import Recomendacoes from "../../components/Recomendacoes";
 
 function MyPage() {
   return (
@@ -16,6 +16,7 @@ function MyPage() {
               <h1>@niculos</h1>
             </div>
             <h2>Recomendações</h2>
+            <Recomendacoes />
           </section>
         <Footer />
       </>
