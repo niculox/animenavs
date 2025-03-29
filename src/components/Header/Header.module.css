@@ -6,6 +6,7 @@
     box-shadow: 0px 0px 10px rgb(101, 101, 101);
     width: 100%;
     position: fixed;
+    z-index: 10;
     top: 0;
 }
 
