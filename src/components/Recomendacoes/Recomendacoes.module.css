@@ -27,13 +27,3 @@
     transition: transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
-.titulo {
-    position: absolute; /* Posiciona o título sobre a imagem */
-    bottom: 1%; 
-    left: 1%; 
-    font-size: 3rem;
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-    z-index: 1; /* Garante que o título fique acima da imagem */
-}

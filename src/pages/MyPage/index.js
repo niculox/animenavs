@@ -15,6 +15,8 @@ function MyPage() {
               <img src={ foto } alt="foto-perfil-niculos" />
               <h1>@niculos</h1>
             </div>
+            <h2>Favoritados</h2>
+            
             <h2>Recomendações</h2>
             <Recomendacoes />
           </section>
