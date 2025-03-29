@@ -28,3 +28,4 @@ export const AnimeProvider = ({ children }) => {
 export const useAnime = () => {
     return useContext(AnimeContext);
 };
+export default SectionRec;
