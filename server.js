@@ -27,10 +27,10 @@ db.connect(err => {
 
 // Rota de cadastro
 app.post('/Cadastro', (req, res) => {
-    const { username, senha } = req.body;
+    const { username, email, senha } = req.body;
     const hashedPassword = bcrypt.hashSync(senha, 8);
 
-    db.query('INSERT INTO usuario (username, senha) VALUES (?, ?)', [username, hashedPassword], (err, results) => {
+    db.query('INSERT INTO usuario (username, email, senha) VALUES (?, ?, ?)', [username,email, hashedPassword], (err, results) => {
         if (err) return res.status(500).send("Erro ao cadastrar o usuário.");
         res.status(201).send("Usuário cadastrado com sucesso!");
     });

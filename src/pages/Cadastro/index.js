@@ -5,35 +5,27 @@ import imagem from "./imgcadastro.jpg";
 import style from "./Cadastro.module.css";
 
 function Cadastro() {
-    const [formData, setFormData] = useState({
-        nome: "",
-        email: "",
-        senha: "",
-    });
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        e.preventDefault(); // Evita o comportamento padrão do formulário
+
+        // Verifica se os campos estão preenchidos
+        if (!username || !email || !senha) {
+            return alert("Preencha os campos corretamente para realizar o seu cadastro");
+        }
+
         try {
-            const response = await fetch("http://localhost:5000/api/cadastro", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(formData),
+            const response = await axios.post('http://localhost:3000/Cadastro', {
+                username,
+                email,
+                senha: senha 
             });
-            if (response.ok) {
-                alert("Cadastro realizado com sucesso!");
-            } else {
-                alert("Erro ao realizar cadastro.");
-            }
+            alert(response.data); // Exibe a mensagem de sucesso
         } catch (error) {
-            console.error("Erro:", error);
-            alert("Erro ao conectar com o servidor.");
+            alert('Erro ao cadastrar: ' + error.response.data);
         }
     };
 
@@ -43,22 +35,22 @@ function Cadastro() {
                 <form onSubmit={handleSubmit}>
                     <h1>Olá! Fico feliz em te ver aqui!</h1>
                     <h2>Já tem cadastro? Realize o login: <Link to="/Login">Login</Link></h2>
-                    <label htmlFor="nome">Nome:</label>
+                    <label htmlFor="username">Username:</label>
                     <input 
                         type="text" 
-                        id="nome" 
-                        name="nome" 
-                        value={formData.nome} 
-                        onChange={handleChange} 
+                        id="username" 
+                        name="username" 
+                        value={username} 
+                        onChange={(e) => setUsername(e.target.value)} 
                         required 
                     />
                     <label htmlFor="email">E-mail:</label>
                     <input 
-                        type="email" 
+                        type="text" 
                         id="email" 
                         name="email" 
-                        value={formData.email} 
-                        onChange={handleChange} 
+                        value={email} 
+                        onChange={(e) => setEmail(e.target.value)} 
                         required 
                     />
                     <label htmlFor="senha">Senha:</label>
@@ -66,8 +58,8 @@ function Cadastro() {
                         type="password" 
                         id="senha" 
                         name="senha" 
-                        value={formData.senha} 
-                        onChange={handleChange} 
+                        value={senha} 
+                        onChange={(e) => setSenha(e.target.value)} 
                         required 
                     />
                     <button id="cadastrar" type="submit">Cadastrar</button>

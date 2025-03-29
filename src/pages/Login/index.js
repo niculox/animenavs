@@ -21,10 +21,4 @@ function Login(){
     );
 }
 
-// function verificacaoLogin(id, pass){
-//     if(id === '' || pass === ''){
-//         return alert("Preencha os campos corretamente. Tente novamente!");
-//     }
-// }
-
 export default Login;
