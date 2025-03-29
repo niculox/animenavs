@@ -1,0 +1,25 @@
+.mypage div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 6%;
+}
+
+.mypage img{
+    width: 10%;
+}
+
+.mypage{
+    margin: 4% 4% 0 4%;
+}
+
+.mypage h1{
+    font-size: 4rem;
+    margin-left: 2%;
+}
+
+.mypage h2{
+    font-size: 4rem;
+    text-transform: uppercase;
+    margin-bottom: 3%;
+}
