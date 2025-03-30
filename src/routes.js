@@ -6,13 +6,14 @@ import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import Anime from "./pages/Anime";
 import Indication from "./pages/Indication";
+import ProtectedRoute from './components/ProtectedRoute';
 
 function AppRoutes(){
     return (
         <BrowserRouter> 
             <Routes>
                 <Route path="/" element={ <Home /> }></Route>
-                <Route path="/MyPage" element={ <MyPage /> }></Route>
+                <Route path="/MyPage" element={ <ProtectedRoute /> }><Route path="" element={<MyPage />} /></Route>
                 <Route path="/Login" element={ <Login /> }></Route>
                 <Route path="/Cadastro" element={ <Cadastro /> }></Route>
                 <Route path="/Anime/:id" element={ <Anime /> }></Route>
