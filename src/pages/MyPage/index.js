@@ -19,7 +19,7 @@ function MyPage() {
             <section className={style.mypage}>
                 <div>
                     <img src={foto} alt="foto-perfil-niculos" />
-                    <h1>{user ? `@${user.username}` : 'Usuário Desconhecido'}</h1> {/* Renderiza o nome de usuário */}
+                    <h1>{user ? `@${user.username}` : 'Usuário Desconhecido'}</h1>
                 </div>
                 <h2>Favoritados</h2>
                 <h2>Recomendações</h2>

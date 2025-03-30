@@ -1,16 +1,14 @@
-// ProtectedRoute.js
-import { Navigate, Outlet } from "react-router-dom";
-import { useAuth } from "../../provider/AuthContext"; // Importa o hook de autenticação
+import { Navigate, Outlet, useParams } from "react-router-dom";
 
 const ProtectedRoute = () => {
-    const { token } = useAuth(); // Obtém o token do contexto
+    const { token } = useParams(); // Obtém o token da URL
 
     if (!token) {
-        // Se não houver token, redireciona para a página de login
+        console.log("Token não encontrado! Redirecionando para login...");
         return <Navigate to="/login" />;
     }
 
-    // Se houver token, renderiza os componentes filhos
+    console.log("Token encontrado:", token);
     return <Outlet />;
 };
 

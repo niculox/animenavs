@@ -1,9 +1,9 @@
-const express = require('express');
-const mysql = require('mysql2');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+import express from 'express';
+import mysql from 'mysql2';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import bodyParser from 'body-parser';
+import cors from 'cors';
 
 const app = express();
 const port = 3000; // ou qualquer porta que você preferir
@@ -13,26 +13,44 @@ app.use(bodyParser.json());
 
 // Configuração do banco de dados
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'dbanimenavs'
+    host: process.env.MYSQL_HOST,
+    user: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DATABASE
 });
 
 // Conectar ao banco de dados
 db.connect(err => {
-    if (err) throw err;
+    if (err) {
+        console.error('Erro ao conectar ao banco de dados:', err);
+        return;
+    }
     console.log('Conectado ao banco de dados MySQL!');
 });
+
 
 // Rota de cadastro
 app.post('/Cadastro', (req, res) => {
     const { username, email, senha } = req.body;
     const hashedPassword = bcrypt.hashSync(senha, 8);
 
-    db.query('INSERT INTO usuario (username, email, senha) VALUES (?, ?, ?)', [username,email, hashedPassword], (err, results) => {
-        if (err) return res.status(500).send("Erro ao cadastrar o usuário.");
-        res.status(201).send("Usuário cadastrado com sucesso!");
+    db.query('SELECT * FROM usuario WHERE username = ? OR email = ?', [username, email], (err, results) => {
+        if (err) {
+            console.error('Erro ao verificar usuário:', err);
+            return res.status(500).json({ erro: "Erro ao verificar usuário." });
+        }
+        if (results.length > 0) {
+            return res.status(400).json({ erro: "Usuário ou email já existe." });
+        }
+        // Continue com a inserção...
+    });
+    
+    db.query('INSERT INTO usuario (username, email, senha) VALUES (?, ?, ?)', [username, email, hashedPassword], (err, results) => {
+        if (err) {
+            console.error('Erro ao cadastrar o usuário:', err);
+            return res.status(500).json({ erro: "Erro ao cadastrar o usuário." });
+        }
+        res.status(201).json({ mensagem: "Usuário cadastrado com sucesso!" });
     });
 });
 
@@ -41,16 +59,23 @@ app.post('/Login', (req, res) => {
     const { username, senha } = req.body;
 
     db.query('SELECT * FROM usuario WHERE username = ?', [username], (err, results) => {
-        if (err) return res.status(500).send("Erro ao fazer login.");
-        if (results.length === 0) return res.status(404).send("Usuário não encontrado.");
+        if (err) {
+            console.error('Erro ao fazer login:', err);
+            return res.status(500).json({ erro: "Erro ao fazer login." });
+        }
+        if (results.length === 0) {
+            return res.status(404).json({ erro: "Usuário não encontrado." });
+        }
 
         const user = results[0];
-        const passwordIsValid = bcrypt.compareSync(senha, user.senha); // Corrigido para usar 'senha'
+        const passwordIsValid = bcrypt.compareSync(senha, user.senha);
 
-        if (!passwordIsValid) return res.status(401).send({ auth: false, token: null });
+        if (!passwordIsValid) {
+            return res.status(401).json({ auth: false, token: null, erro: "Senha inválida." });
+        }
 
         const token = jwt.sign({ id: user.id }, 'seu_segredo', { expiresIn: 86400 }); // expira em 24 horas
-        res.status(200).send({ auth: true, token });
+        res.status(200).json({ auth: true, token });
     });
 });
 

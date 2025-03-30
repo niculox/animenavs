@@ -20,7 +20,13 @@ const useAuthProvider = () => {
     
             const data = await response.json();
             localStorage.setItem('token', data.token);
-            navigate('/mypage');
+
+            // Codifica o token para garantir que ele seja seguro na URL
+            const encodedToken = encodeURIComponent(data.token);
+
+            // Redireciona para MyPage passando o token na URL
+            navigate(`/mypage/${encodedToken}`);
+
         } catch (error) {
             console.error('Erro no login:', error);
             alert(`Erro: ${error.message}`); // Exibe uma mensagem de erro ao usuário

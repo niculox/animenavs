@@ -15,8 +15,8 @@ function AppRoutes(){
                 <AuthProvider>
                 <Routes>
                     <Route path="/" element={ <Home /> }></Route>
-                    <Route path="/MyPage" element={ <ProtectedRoute /> }>
-                        <Route path="" element={<MyPage />} />
+                    <Route path="/MyPage/" element={ <ProtectedRoute /> }>
+                        <Route path="/MyPage/:token" element={<MyPage />} />
                     </Route>
                     <Route path="/Login" element={ <Login /> }></Route>
                     <Route path="/Cadastro" element={ <Cadastro /> }></Route>
