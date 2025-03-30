@@ -6,7 +6,7 @@ import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import Anime from "./pages/Anime";
 import Indication from "./pages/Indication";
-import ProtectedRoute from './components/ProtectedRoute';
+import ProtectedRoute from './provider/useAuthProvider';
 
 function AppRoutes(){
     return (

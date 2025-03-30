@@ -1,7 +1,7 @@
-// src/provider/authProvider.js
+// src/provider/useAuthProvider.js
 import { useNavigate } from 'react-router-dom';
 
-const authProvider = () => {
+const useAuthProvider = () => {
     const navigate = useNavigate();
 
     const login = async ({ username, senha }) => {
@@ -37,16 +37,12 @@ const authProvider = () => {
         if (!token) {
             throw new Error('Usuário não autenticado');
         }
-        // Aqui você pode adicionar lógica para verificar se o token é válido
     };
 
     const getIdentity = () => {
         const token = localStorage.getItem('token');
         if (token) {
             // Aqui você pode decodificar o token para obter informações do usuário
-            // Por exemplo, usando jwt-decode
-            // const decoded = jwt_decode(token);
-            // return { id: decoded.id, username: decoded.username };
             return { id: 'user_id_placeholder', username: 'username_placeholder' }; // Placeholder
         }
         return null;
@@ -60,4 +56,4 @@ const authProvider = () => {
     };
 };
 
-export default authProvider;
+export default useAuthProvider;

@@ -1,6 +1,6 @@
 // ProtectedRoute.js
 import { Navigate, Outlet } from "react-router-dom";
-import { useAuth } from "../provider/authProvider"; // Importa o hook de autenticação
+import { useAuth } from "../../provider/useAuthProvider"; // Importa o hook de autenticação
 
 const ProtectedRoute = () => {
     const { token } = useAuth(); // Obtém o token do contexto
