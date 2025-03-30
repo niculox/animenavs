@@ -1,4 +1,3 @@
-// src/provider/useAuthProvider.js
 import { useNavigate } from 'react-router-dom';
 
 const useAuthProvider = () => {
@@ -13,17 +12,19 @@ const useAuthProvider = () => {
                 },
                 body: JSON.stringify({ username, senha }),
             });
-
+    
             if (!response.ok) {
-                throw new Error('Erro ao fazer login');
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Erro ao fazer login');
             }
-
+    
             const data = await response.json();
-            localStorage.setItem('token', data.token); // Armazena o token
-            navigate('/mypage'); // Redireciona para a página MyPage após login
+            localStorage.setItem('token', data.token);
+            navigate('/mypage');
         } catch (error) {
             console.error('Erro no login:', error);
-            throw error; // Propaga o erro para ser tratado no componente
+            alert(`Erro: ${error.message}`); // Exibe uma mensagem de erro ao usuário
+            throw error;
         }
     };
 

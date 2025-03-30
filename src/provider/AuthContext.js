@@ -1,11 +1,11 @@
 // src/provider/AuthContext.js
 import React, { createContext, useContext } from 'react';
-import useAuthProvider from './useAuthProvider'; // Atualizado para usar o novo hook
+import useAuthProvider from './useAuthProvider'; // Importa o hook de autenticação
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const auth = useAuthProvider(); // Usa o hook personalizado
+    const auth = useAuthProvider(); // Usa o hook de autenticação
 
     return (
         <AuthContext.Provider value={auth}>
@@ -15,5 +15,5 @@ export const AuthProvider = ({ children }) => {
 };
 
 export const useAuth = () => {
-    return useContext(AuthContext);
+    return useContext(AuthContext); // Retorna o contexto de autenticação
 };
