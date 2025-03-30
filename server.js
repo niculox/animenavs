@@ -34,27 +34,30 @@ app.post('/Cadastro', (req, res) => {
     const { username, email, senha } = req.body;
     const hashedPassword = bcrypt.hashSync(senha, 8);
 
+    // Verifica se o usuário ou o email já existem
     db.query('SELECT * FROM usuario WHERE username = ? OR email = ?', [username, email], (err, results) => {
         if (err) {
             console.error('Erro ao verificar usuário:', err);
             return res.status(500).json({ erro: "Erro ao verificar usuário." });
         }
+
         if (results.length > 0) {
             return res.status(400).json({ erro: "Usuário ou email já existe." });
         }
-        // Continue com a inserção...
-    });
-    
-    db.query('INSERT INTO usuario (username, email, senha) VALUES (?, ?, ?)', [username, email, hashedPassword], (err, results) => {
-        if (err) {
-            console.error('Erro ao cadastrar o usuário:', err);
-            return res.status(500).json({ erro: "Erro ao cadastrar o usuário." });
-        }
-        res.status(201).json({ mensagem: "Usuário cadastrado com sucesso!" });
+
+        // Insere o novo usuário após a verificação
+        db.query('INSERT INTO usuario (username, email, senha) VALUES (?, ?, ?)', [username, email, hashedPassword], (err, results) => {
+            if (err) {
+                console.error('Erro ao cadastrar o usuário:', err);
+                return res.status(500).json({ erro: "Erro ao cadastrar o usuário." });
+            }
+            console.log(`Usuário ${username} cadastrado com sucesso!`);
+            res.status(201).json({ mensagem: "Usuário cadastrado com sucesso!" });
+        });
     });
 });
 
-// Rota de login
+// Backend (rota de login)
 app.post('/Login', (req, res) => {
     const { username, senha } = req.body;
 
@@ -74,10 +77,11 @@ app.post('/Login', (req, res) => {
             return res.status(401).json({ auth: false, token: null, erro: "Senha inválida." });
         }
 
-        const token = jwt.sign({ id: user.id }, 'seu_segredo', { expiresIn: 86400 }); // expira em 24 horas
+        const token = jwt.sign({ id: user.id, username: user.username }, 'seu_segredo', { expiresIn: '1h' });
         res.status(200).json({ auth: true, token });
     });
 });
+
 
 // Iniciar o servidor
 app.listen(port, () => {

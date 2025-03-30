@@ -11,22 +11,21 @@ import ProtectedRoute from './components/ProtectedRoute';
 
 function AppRoutes(){
     return (
-            <BrowserRouter> 
-                <AuthProvider>
+        <BrowserRouter> 
+            <AuthProvider>
                 <Routes>
-                    <Route path="/" element={ <Home /> }></Route>
-                    <Route path="/MyPage/" element={ <ProtectedRoute /> }>
-                        <Route path="/MyPage/:token" element={<MyPage />} />
+                    <Route path="/" element={ <Home /> } />
+                    <Route path="/mypage/:token" element={ <ProtectedRoute /> }>
+                        <Route element={<MyPage />} />
                     </Route>
-                    <Route path="/Login" element={ <Login /> }></Route>
-                    <Route path="/Cadastro" element={ <Cadastro /> }></Route>
-                    <Route path="/Anime/:id" element={ <Anime /> }></Route>
-                    <Route path="/Indication/" element={ <Indication /> }></Route>
-                    <Route path="*" element={ <PageNotFound /> }></Route>
+                    <Route path="/login" element={ <Login /> } />
+                    <Route path="/cadastro" element={ <Cadastro /> } />
+                    <Route path="/anime/:id" element={ <Anime /> } />
+                    <Route path="/indication" element={ <Indication /> } />
+                    <Route path="*" element={ <PageNotFound /> } />
                 </Routes>
-                </AuthProvider>
-            </BrowserRouter>
-        
+            </AuthProvider>
+        </BrowserRouter>
     );
 }
 

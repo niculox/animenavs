@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import jwt_decode from "jwt-decode";
 
 const useAuthProvider = () => {
     const navigate = useNavigate();
@@ -15,21 +16,20 @@ const useAuthProvider = () => {
     
             if (!response.ok) {
                 const errorData = await response.json();
-                throw new Error(errorData.message || 'Erro ao fazer login');
+                throw new Error(errorData.erro || 'Erro ao fazer login');
             }
     
             const data = await response.json();
             localStorage.setItem('token', data.token);
-
-            // Codifica o token para garantir que ele seja seguro na URL
-            const encodedToken = encodeURIComponent(data.token);
-
-            // Redireciona para MyPage passando o token na URL
-            navigate(`/mypage/${encodedToken}`);
-
+    
+            console.log("Token gerado: ", data.token); // Verifique se o token está correto
+    
+            // Aqui, redireciona para MyPage passando o token na URL
+            navigate(`/mypage/${data.token}`);
+            
         } catch (error) {
             console.error('Erro no login:', error);
-            alert(`Erro: ${error.message}`); // Exibe uma mensagem de erro ao usuário
+            alert(`Erro: ${error.message}`);
             throw error;
         }
     };
@@ -49,8 +49,14 @@ const useAuthProvider = () => {
     const getIdentity = () => {
         const token = localStorage.getItem('token');
         if (token) {
-            // Aqui você pode decodificar o token para obter informações do usuário
-            return { id: 'user_id_placeholder', username: 'username_placeholder' }; // Placeholder
+            try {
+                const decoded = jwt_decode(token); // Decodifica o token
+                console.log('Decoded token:', decoded); // Verifique os dados decodificados
+                return decoded; // Retorna o usuário decodificado
+            } catch (error) {
+                console.error('Erro ao decodificar o token:', error);
+                return null;
+            }
         }
         return null;
     };

@@ -9,24 +9,13 @@ function Login() {
     const [senha, setSenha] = useState('');
     const { login } = useAuth(); // Obtém a função de login do contexto
 
-    const handleLogin = async (e) => {
-        e.preventDefault(); // Evita o comportamento padrão do formulário
-
-        try {
-            await login({ username, senha }); // Chama a função de login do authProvider
-            alert('Login bem-sucedido!');
-        } catch (error) {
-            console.error('Erro ao fazer login:', error);
-            alert('Erro ao fazer login. Tente novamente mais tarde.');
-        }
-    };
 
     return (
         <section className={style.login}>
             <div>
                 <img src={imagem} alt="background-login" />
-                <form onSubmit={handleLogin}>
-                    <h1>Bem vindo de volta!</h1>
+                <form onSubmit={login}>
+                    <h1>Bem-vindo de volta!</h1>
                     <h2>Ainda não tem cadastro? Realize-o aqui: <Link to="/Cadastro">Cadastro</Link></h2>
                     <label htmlFor="username">Username:</label>
                     <input
