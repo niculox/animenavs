@@ -9,20 +9,18 @@ import Anime from "./pages/Anime";
 import Indication from "./pages/Indication";
 import ProtectedRoute from './components/ProtectedRoute';
 
-function AppRoutes(){
+function AppRoutes() {
     return (
         <BrowserRouter> 
             <AuthProvider>
                 <Routes>
-                    <Route path="/" element={ <Home /> } />
-                    <Route path="/mypage/:token" element={ <ProtectedRoute /> }>
-                        <Route element={<MyPage />} />
-                    </Route>
-                    <Route path="/login" element={ <Login /> } />
-                    <Route path="/cadastro" element={ <Cadastro /> } />
-                    <Route path="/anime/:id" element={ <Anime /> } />
-                    <Route path="/indication" element={ <Indication /> } />
-                    <Route path="*" element={ <PageNotFound /> } />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/mypage" element={<ProtectedRoute><MyPage /></ProtectedRoute>} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/cadastro" element={<Cadastro />} />
+                    <Route path="/anime/:id" element={<Anime />} />
+                    <Route path="/indication" element={<Indication />} />
+                    <Route path="*" element={<PageNotFound />} />
                 </Routes>
             </AuthProvider>
         </BrowserRouter>

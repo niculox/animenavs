@@ -13,20 +13,17 @@ const useAuthProvider = () => {
                 },
                 body: JSON.stringify({ username, senha }),
             });
-    
+
             if (!response.ok) {
                 const errorData = await response.json();
                 throw new Error(errorData.erro || 'Erro ao fazer login');
             }
-    
+
             const data = await response.json();
-            localStorage.setItem('token', data.token);
-    
+            localStorage.setItem('token', data.token); // Armazena o token no localStorage
             console.log("Token gerado: ", data.token); // Verifique se o token está correto
-    
-            // Aqui, redireciona para MyPage passando o token na URL
-            navigate(`/mypage/${data.token}`);
-            
+            navigate('/mypage'); // Redireciona para MyPage
+
         } catch (error) {
             console.error('Erro no login:', error);
             alert(`Erro: ${error.message}`);
@@ -42,7 +39,7 @@ const useAuthProvider = () => {
     const checkAuth = () => {
         const token = localStorage.getItem('token');
         if (!token) {
-            throw new Error('Usuário não autenticado');
+            throw new Error('Usuário não autenticado'); // Lança um erro se não houver token
         }
     };
 

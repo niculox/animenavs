@@ -13,10 +13,10 @@ app.use(bodyParser.json());
 
 // Configuração do banco de dados
 const db = mysql.createConnection({
-    host: process.env.MYSQL_HOST,
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
-    database: process.env.MYSQL_DATABASE
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'dbanimenavs'
 });
 
 // Conectar ao banco de dados
