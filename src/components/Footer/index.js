@@ -3,7 +3,7 @@ import styles from './Footer.module.css';
 function Footer() {
     return (
         <footer className={styles.footer}>
-          <h3>Desenvoolvido por Nícolas Amaral | @niculos_</h3>
+          <h3>Desenvolvido por Nícolas Amaral | @niculos_</h3>
         </footer>
     );
   }

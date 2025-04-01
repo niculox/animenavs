@@ -22,6 +22,7 @@ const MyPage = () => {
                 <h2>Favoritados</h2>
                 <h2>Recomendações</h2>
                 <Recomendacoes />
+                <button>Sair</button>
             </section>
             <Footer />
         </>
