@@ -53,3 +53,7 @@
 .fav img:hover{
     box-shadow: none;
 }
+
+.fav{
+    z-index: 9;
+}
