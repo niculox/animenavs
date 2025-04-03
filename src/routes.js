@@ -8,7 +8,6 @@ import Cadastro from "./pages/Cadastro";
 import Anime from "./pages/Anime";
 import Indication from "./pages/Indication";
 import ProtectedRoute from './components/ProtectedRoute';
-import { FavoritesContext } from "./contexts/Favorito";
 
 function AppRoutes() {
     return (

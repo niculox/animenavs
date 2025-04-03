@@ -36,4 +36,13 @@
     font-size: 2rem;
     margin-left: 5%;
     margin-bottom: 5%;
+    cursor: pointer;
+}
+
+.mypage button:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    background-color: #8f0a00;
+    color:#000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

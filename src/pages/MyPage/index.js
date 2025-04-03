@@ -5,14 +5,15 @@ import Favorites from "../../components/Favorites";
 import style from "./MyPage.module.css";
 import foto from "./niculos.png";
 import Recomendacoes from "../../components/Recomendacoes";
-import { useAuth } from '../../provider/AuthContext';
-import { useFavoriteContext } from "../../contexts/Favorito"; // Importando o hook do contexto de favoritos
-import Card from "."; // Importando o componente de Card
+import { useAuth } from '../../provider/AuthContext'; // Importando o hook de autenticação
 
 const MyPage = () => {
-    const { getIdentity } = useAuth();
+    const { getIdentity, logout } = useAuth(); // Obtendo a função logout
     const user = getIdentity(); // Obtém os dados do usuário
-    const { favorite } = useFavoriteContext(); // Acessando a lista de favoritos
+
+    const handleLogout = () => {
+        logout(); // Chama a função de logout
+    };
 
     return (
         <>
@@ -27,7 +28,7 @@ const MyPage = () => {
                 <Favorites />
                 <h2>Recomendações</h2>
                 <Recomendacoes />
-                <button>Sair</button>
+                <button onClick={handleLogout}>Sair</button> {/* Adiciona o manipulador de clique */}
             </section>
             <Footer />
         </>
