@@ -60,7 +60,7 @@ const MyPage = () => {
             <Banner />
             <section className={style.mypage}>
                 <div>
-                    <img src={sorteiaIcon()} alt="foto-perfil-niculos" />
+                    <img src={sorteiaIcon()} alt="foto-perfil-niculos" className={style.icon}/>
                     <h1>{`@${user.username}`}</h1>
                 </div>
                 <h2>Favoritos</h2>
