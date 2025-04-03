@@ -41,7 +41,7 @@ function Cards() {
                                 <img 
                                     src={icone} 
                                     alt="coração-favorito" 
-                                    onClick={() => addFavorito({ id: card.id })} // Certifique-se de que o nome está correto
+                                    onClick={() => addFavorito({ id: card.id, imagem: card.imagem, titulo: card.titulo })}
                                 />
                             </figure>
                         </div>

@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import Lista from "../json/animes.json";
 
 export const FavoritesContext = createContext();
 FavoritesContext.displayName = "MyFavorites";
