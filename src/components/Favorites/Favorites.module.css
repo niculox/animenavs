@@ -1,11 +1,32 @@
-.favorites{
+.favorites {
     display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    width: 100%;
 }
 
-.favorites p{
+.favorites p {
     color: #650000;
     text-transform: uppercase;
     font-size: 2rem;
     margin: 0 0 5% 2%;
     text-align: left;
+}
+
+.card {
+    margin: 1%; 
+    text-align: center;
+}
+
+.card img {
+    width: 40vh; 
+    height: 31vh; 
+    border-radius: 20px;
+    min-width: 100%;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
