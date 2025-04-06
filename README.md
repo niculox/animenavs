@@ -1,6 +1,6 @@
 # AnimeNavs
 
-AnimeNavs é uma aplicação web que permite aos usuários explorar e descobrir séries de anime. A aplicação fornece informações detalhadas sobre cada anime, incluindo título, descrição, classificação e imagens. Além disso, oferece funcionalidades como cadastro de usuários e recomendações semanais de animes.
+AnimeNavs é uma aplicação web que permite aos usuários explorar e descobrir séries de anime. A aplicação fornece informações detalhadas sobre cada anime, incluindo título, descrição, classificação e imagens. Além disso, oferece funcionalidades como cadastro de usuários, recomendações semanais de animes e uma interface responsiva.
 
 ---
 
@@ -10,6 +10,7 @@ AnimeNavs é uma aplicação web que permite aos usuários explorar e descobrir 
 - **Detalhes do Anime**: Veja informações detalhadas sobre cada anime, incluindo descrição e classificação.
 - **Recomendações Semanais**: Descubra um novo anime recomendado a cada semana.
 - **Cadastro de Usuários**: Permite que novos usuários se cadastrem no sistema.
+- **Login de Usuários**: Realize login para acessar funcionalidades exclusivas.
 - **Design Responsivo**: A aplicação é projetada para funcionar bem em dispositivos desktop e móveis.
 
 ---
