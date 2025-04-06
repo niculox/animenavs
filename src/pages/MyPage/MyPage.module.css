@@ -47,3 +47,21 @@
     color:#000000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+@media (max-width: 768px) {
+    .mypage h1{
+        font-size: 1.5rem;
+    }
+    .mypage h2{
+        font-size: 1.5rem;
+    }
+    .mypage p{
+        font-size: 0.8rem;
+    }
+    .mypage button{
+        font-size: 1rem;
+    }
+    .icon{
+        width: 20%;
+    }
+}

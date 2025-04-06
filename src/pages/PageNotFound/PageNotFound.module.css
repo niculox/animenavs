@@ -31,5 +31,36 @@
     margin-bottom: 4%;
 }
 
+@media (max-width: 768px) {
+    .pagenotfound img{
+        width: 60%;
+        margin-block: 40%
+    }
+    .pagenotfound h1{
+        font-size: 2rem;
+    }
+    .pagenotfound h2{
+        font-size: 1.5rem;
+    }
 
-  
+    .pagenotfound{
+        margin-top: 20%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .pagenotfound img{
+        width: 50%;
+        margin-block: 20%
+    }
+    .pagenotfound h1{
+        font-size: 1.5rem;
+    }
+    .pagenotfound h2{
+        font-size: 1.2rem;
+    }
+
+    .pagenotfound{
+        margin-top: 20%;
+    }
+}

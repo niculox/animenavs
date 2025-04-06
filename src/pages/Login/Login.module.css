@@ -57,3 +57,43 @@
 .login button:hover{
     background-color: rgb(160, 255, 223);
 }
+
+@media (max-width: 1200px) {
+    .login{
+        margin: 5% 10% 0 10%;
+        width: 80%;
+    }
+    .login form{
+        margin: 0 10% 0 5%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .login{
+        margin: 5% 10% 0 10%;
+        width: 80%;
+    }
+    .login form{
+        margin: 0 10% 0 5%;
+    }
+}
+
+@media (max-width: 900px) {
+    .login{
+        margin: 5% 10% 0 10%;
+        width: 60%;
+    }
+    .login form{
+        margin: 0 20% 0 10%;
+    }
+}
+
+@media (max-width: 899px) {
+    .login{
+        margin: 5% 10% 0 30%;
+        width: 60%;
+    }
+    .login form{
+        margin: 0 30% 0 15%;
+    }
+}

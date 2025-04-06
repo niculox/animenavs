@@ -22,3 +22,29 @@
     text-indent: 5%;
     text-align: justify;
 }
+
+@media (max-width: 1050px) {
+    .imagem{
+        height: 60vh;
+    }
+    .anime h1{
+        font-size: 2rem;
+        margin: 2% 0 0.5% 4%;
+    }
+    .anime p{
+        font-size: 1rem;
+        margin: 5% 8% 4% 4%;
+    }
+}
+
+@media (max-width: 800px) {
+    .imagem{
+        height: 40vh;
+    }
+}
+
+@media (max-width: 600px) {
+    .imagem{
+        height: 30vh;
+    }
+}

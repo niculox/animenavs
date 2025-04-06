@@ -3,7 +3,7 @@
     display: flex;
     justify-content: flex-start;
     padding: 2%;
-    margin-block: 10%;
+    margin-blbock: 10%;
 }
 
 .container img{
@@ -15,7 +15,7 @@
 }
 
 .container h1{
-    font-size: 5.3rem;
+    font-size: 300%;
     margin-left: 4%;
     color: #000000;
     font-weight: 200;
@@ -25,7 +25,7 @@
 }
 
 .container h2{
-    font-size: 4rem;
+    font-size: 250%;
     margin-left: 4%;
     font-weight: 400;
     margin-right: 20%;
@@ -57,4 +57,84 @@
     transform: scale(1.05);
     transition: transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 1200px) {
+
+    .container{
+        margin-top: 15%;
+    }
+    .container h1{
+        font-size: 300%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    .container h2{
+        font-size: 200%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    .linkindication img{
+        width: 80%;
+        height: 30vh;
+    }
+    .linkindication h2{
+        font-size: 1rem;
+        padding-left: 2%;
+    }
+}
+
+@media (max-width: 800px) {
+    .container{
+        margin-top: 20%;
+    }
+    .container img{
+        width: 90%;
+        height: 50vh;
+    }
+    .container h1{
+        font-size: 200%;
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+    .container h2{
+        font-size: 150%;
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+    .linkindication img{
+        width: 90%;
+        height: 13vh;
+    }
+    .linkindication h2{
+        font-size: 1rem;;
+    }
+}
+
+@media (max-width: 560px) {
+    .container{
+        margin-top: 20%;
+    }
+    .container img{
+        width: 60%;
+        height: 50vh;
+    }
+    .container h1{
+        font-size: 150%;
+        margin-left: 4%;
+        margin-right: 8%;
+    }
+    .container h2{
+        font-size: 120%;
+        margin-left: 4%;
+        margin-right: 8%;
+    }
+    .linkindication img{
+        width: 90%;
+        height: 20vh;
+    }
+    .linkindication h2{
+        font-size: 1rem;;
+    }
 }
