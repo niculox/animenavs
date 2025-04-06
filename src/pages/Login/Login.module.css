@@ -68,16 +68,6 @@
     }
 }
 
-@media (min-width: 1200px) {
-    .login{
-        margin: 5% 10% 0 10%;
-        width: 80%;
-    }
-    .login form{
-        margin: 0 10% 0 5%;
-    }
-}
-
 @media (max-width: 900px) {
     .login{
         margin: 5% 10% 0 10%;
