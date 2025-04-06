@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import cards from "../../json/animes.json";
 import style from "./Cards.module.css";
 import favorito from "../../assets/iconfav/2.png";
 import ufavorito from "../../assets/iconfav/1.png";
 import { useFavoriteContext } from "../../contexts/Favorito";
 
-function Cards() {
+function Cards({ cards = [] }) {
     const [titulo, setTitulo] = useState("");
-    const { favorite, addFavorito } = useFavoriteContext(); // Certifique-se de que o nome está correto
+    const { favorite, addFavorito } = useFavoriteContext();
 
     const mostrarTitulo = (titulo) => {
         setTitulo(titulo);
