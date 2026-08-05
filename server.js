@@ -7,13 +7,13 @@ import cors from 'cors';
 
 const app = express();
 
-// O Render injeta a porta automaticamente em process.env.PORT
+// Porta dinâmica injetada pelo Render
 const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(bodyParser.json());
 
-// Configuração flexível: usa variáveis de ambiente na nuvem ou padrão local
+// Configuração do MySQL com suporte a variáveis de ambiente
 const db = mysql.createConnection({
     host: process.env.DB_HOST || 'localhost',
     user: process.env.DB_USER || 'root',
@@ -31,8 +31,13 @@ db.connect(err => {
     console.log('Conectado ao banco de dados MySQL com sucesso!');
 });
 
-// Rota de cadastro
-app.post('[https://animenavs.onrender.com/Cadastro](https://animenavs.onrender.com/Cadastro)', (req, res) => {
+// 1. Rota raiz (para testar se a API está online no navegador)
+app.get('/', (req, res) => {
+    res.send('API AnimeNavs está rodando com sucesso!');
+});
+
+// 2. Rota de cadastro (usando endpoint relativo e em minúsculo)
+app.post('/Cadastro', (req, res) => {
     const { username, email, senha } = req.body;
     const hashedPassword = bcrypt.hashSync(senha, 8);
 
@@ -56,8 +61,8 @@ app.post('[https://animenavs.onrender.com/Cadastro](https://animenavs.onrender.c
     });
 });
 
-// Rota de login
-app.post('[https://animenavs.onrender.com/Login](https://animenavs.onrender.com/Login)', (req, res) => {
+// 3. Rota de login
+app.post('/Login', (req, res) => {
     const { username, senha } = req.body;
 
     db.query('SELECT * FROM usuario WHERE username = ?', [username], (err, results) => {
@@ -77,7 +82,9 @@ app.post('[https://animenavs.onrender.com/Login](https://animenavs.onrender.com/
         }
 
         const secret = process.env.JWT_SECRET || 'seu_segredo';
-        const token = jwt.sign({ id: user.id, username: user.username }, secret, { expiresIn: '1h' });
+        
+        // Corrigido para ler user.idusuario (conforme o nome da coluna no seu SQL)
+        const token = jwt.sign({ id: user.idusuario, username: user.username }, secret, { expiresIn: '1h' });
         res.status(200).json({ auth: true, token });
     });
 });
