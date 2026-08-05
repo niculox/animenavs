@@ -1,8 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import jwt_decode from "jwt-decode";
 
-// Substitua pela URL gerada no Render quando fizer o deploy
-const API_URL = process.env.REACT_APP_API_URL || 'https://seu-backend.onrender.com';
+const API_URL = process.env.REACT_APP_API_URL || 'https://animenavs.onrender.com';
 
 const useAuthProvider = () => {
     const navigate = useNavigate();
