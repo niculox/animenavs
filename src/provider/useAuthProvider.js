@@ -1,12 +1,15 @@
 import { useNavigate } from 'react-router-dom';
 import jwt_decode from "jwt-decode";
 
+// Substitua pela URL gerada no Render quando fizer o deploy
+const API_URL = process.env.REACT_APP_API_URL || 'https://seu-backend.onrender.com';
+
 const useAuthProvider = () => {
     const navigate = useNavigate();
 
     const login = async ({ username, senha }) => {
         try {
-            const response = await fetch('http://localhost:3000/Login', {
+            const response = await fetch(`${API_URL}/Login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -20,9 +23,8 @@ const useAuthProvider = () => {
             }
 
             const data = await response.json();
-            localStorage.setItem('token', data.token); // Armazena o token no localStorage
-            console.log("Token gerado: ", data.token); // Verifique se o token está correto
-            navigate('/mypage'); // Redireciona para MyPage
+            localStorage.setItem('token', data.token);
+            navigate('/mypage');
 
         } catch (error) {
             console.error('Erro no login:', error);
@@ -32,14 +34,14 @@ const useAuthProvider = () => {
     };
 
     const logout = () => {
-        localStorage.removeItem('token'); // Remove o token
-        navigate('/login'); // Redireciona para a página de login
+        localStorage.removeItem('token');
+        navigate('/login');
     };
 
     const checkAuth = () => {
         const token = localStorage.getItem('token');
         if (!token) {
-            throw new Error('Usuário não autenticado'); // Lança um erro se não houver token
+            throw new Error('Usuário não autenticado');
         }
     };
 
@@ -47,9 +49,7 @@ const useAuthProvider = () => {
         const token = localStorage.getItem('token');
         if (token) {
             try {
-                const decoded = jwt_decode(token); // Decodifica o token
-                console.log('Decoded token:', decoded); // Verifique os dados decodificados
-                return decoded; // Retorna o usuário decodificado
+                return jwt_decode(token);
             } catch (error) {
                 console.error('Erro ao decodificar o token:', error);
                 return null;

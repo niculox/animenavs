@@ -6,35 +6,36 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 
 const app = express();
-const port = 3000; // ou qualquer porta que você preferir
+
+// O Render injeta a porta automaticamente em process.env.PORT
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(bodyParser.json());
 
-// Configuração do banco de dados
+// Configuração flexível: usa variáveis de ambiente na nuvem ou padrão local
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'dbanimenavs'
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASSWORD || '',
+    database: process.env.DB_NAME || 'dbanimenavs',
+    port: process.env.DB_PORT || 3306,
+    ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false
 });
 
-// Conectar ao banco de dados
 db.connect(err => {
     if (err) {
         console.error('Erro ao conectar ao banco de dados:', err);
         return;
     }
-    console.log('Conectado ao banco de dados MySQL!');
+    console.log('Conectado ao banco de dados MySQL com sucesso!');
 });
-
 
 // Rota de cadastro
 app.post('/Cadastro', (req, res) => {
     const { username, email, senha } = req.body;
     const hashedPassword = bcrypt.hashSync(senha, 8);
 
-    // Verifica se o usuário ou o email já existem
     db.query('SELECT * FROM usuario WHERE username = ? OR email = ?', [username, email], (err, results) => {
         if (err) {
             console.error('Erro ao verificar usuário:', err);
@@ -45,19 +46,17 @@ app.post('/Cadastro', (req, res) => {
             return res.status(400).json({ erro: "Usuário ou email já existe." });
         }
 
-        // Insere o novo usuário após a verificação
         db.query('INSERT INTO usuario (username, email, senha) VALUES (?, ?, ?)', [username, email, hashedPassword], (err, results) => {
             if (err) {
                 console.error('Erro ao cadastrar o usuário:', err);
                 return res.status(500).json({ erro: "Erro ao cadastrar o usuário." });
             }
-            console.log(`Usuário ${username} cadastrado com sucesso!`);
             res.status(201).json({ mensagem: "Usuário cadastrado com sucesso!" });
         });
     });
 });
 
-// Backend (rota de login)
+// Rota de login
 app.post('/Login', (req, res) => {
     const { username, senha } = req.body;
 
@@ -77,13 +76,12 @@ app.post('/Login', (req, res) => {
             return res.status(401).json({ auth: false, token: null, erro: "Senha inválida." });
         }
 
-        const token = jwt.sign({ id: user.id, username: user.username }, 'seu_segredo', { expiresIn: '1h' });
+        const secret = process.env.JWT_SECRET || 'seu_segredo';
+        const token = jwt.sign({ id: user.id, username: user.username }, secret, { expiresIn: '1h' });
         res.status(200).json({ auth: true, token });
     });
 });
 
-
-// Iniciar o servidor
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`);
 });
