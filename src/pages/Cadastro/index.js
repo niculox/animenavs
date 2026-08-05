@@ -18,7 +18,7 @@ function Cadastro() {
         }
 
         try {
-            const response = await axios.post('http://localhost:3000/Cadastro', {
+            const response = await axios.post('https://animenavs.onrender.com', {
                 username,
                 email,
                 senha: senha 
