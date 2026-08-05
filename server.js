@@ -32,7 +32,7 @@ db.connect(err => {
 });
 
 // Rota de cadastro
-app.post('/Cadastro', (req, res) => {
+app.post('[https://animenavs.onrender.com/Cadastro](https://animenavs.onrender.com/Cadastro)', (req, res) => {
     const { username, email, senha } = req.body;
     const hashedPassword = bcrypt.hashSync(senha, 8);
 
@@ -57,7 +57,7 @@ app.post('/Cadastro', (req, res) => {
 });
 
 // Rota de login
-app.post('/Login', (req, res) => {
+app.post('[https://animenavs.onrender.com/Login](https://animenavs.onrender.com/Login)', (req, res) => {
     const { username, senha } = req.body;
 
     db.query('SELECT * FROM usuario WHERE username = ?', [username], (err, results) => {
