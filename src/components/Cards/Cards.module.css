@@ -1,59 +1,121 @@
-.card {
-    align-items: center;
-    text-align: center;
-    margin-top: 4%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.gridSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem 1.5rem;
+  padding: 2rem 1rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-.card > a {
-    margin: 1%; /* Margem de 1% em todos os lados */
-    text-decoration: none;
+.cardItem {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-.cardContainer { /* Novo contêiner para a imagem e o título */
-    position: relative; /* Permite que o título seja posicionado sobre a imagem */
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    flex-direction: column;
+.cardItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-.card img {
-    width: 55vh;
-    height: 35vh;
-    border-radius: 20px;
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
 }
 
-.card img:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.cardLink:focus-visible,
+.favButton:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 3px;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.cardItem:hover .cardImage {
+  transform: scale(1.04);
+}
+
+.titleOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    transparent 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
 }
 
 .titulo {
-    position: absolute; /* Posiciona o título sobre a imagem */
-    bottom: 1%; 
-    left: 1%; 
-    font-size: 3rem;
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-    z-index: 1; /* Garante que o título fique acima da imagem */
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  line-height: 1.3;
 }
 
-.fav img{
-    width: 6%;
-    height: 3.5vh;
-    position: absolute;
-    margin: -8% 0 0 -10%;
-    border-radius: 5px;
+/* Botão de Favorito */
+.favButton {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
-.fav img:hover{
-    box-shadow: none;
+.favButton:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
 }
 
-.fav{
-    z-index: 9;
+.favIcon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .gridSection {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    gap: 1.25rem;
+    padding: 1rem;
+  }
 }
