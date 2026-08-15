@@ -1,29 +1,88 @@
-.recomendacoes {
-    align-items: center;
-    text-align: center;
-    margin-top: -4%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.sectionContainer {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
 }
 
-.recomendacoes > a {
-    margin: 1%; /* Margem de 1% em todos os lados */
-    text-decoration: none;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.75rem;
+  width: 100%;
 }
 
-.cardContainer { /* Novo contêiner para a imagem e o título */
-    position: relative; /* Permite que o título seja posicionado sobre a imagem */
+.cardItem {
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.recomendacoes img {
-    width: 55vh;
-    height: 35vh;
-    border-radius: 20px;
+.cardItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-.recomendacoes img:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+
+.cardLink:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 4px;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.cardItem:hover .cardImage {
+  transform: scale(1.04);
+}
+
+.titleOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.2) 60%,
+    transparent 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+}
+
+.cardTitle {
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  line-height: 1.3;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    gap: 1.25rem;
+  }
 }
