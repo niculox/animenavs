@@ -1,141 +1,140 @@
-.container{
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    padding: 2%;
-    margin-top: 15%;
-    margin-bottom: 4%;
+.heroSection {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem 3rem 1.5rem; /* 6rem compensa o header fixo */
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2.5rem;
+  align-items: center;
 }
 
-.container img{
-    width: 45%;
-    height: 80vh;
-    border-radius: 20px;
-    margin-left: 4%;
-    object-fit: cover;
+.imageHighlightWrapper {
+  width: 100%;
+  height: clamp(350px, 65vh, 600px);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  background-color: #1a1a1a;
 }
 
-.container h1{
-    font-size: 3.6rem;
-    margin-left: 4%;
-    color: #000000;
-    font-weight: 200;
-    margin-right: 35%;
-    text-transform: uppercase;
-    font-family: "Boldonse", system-ui;
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.container h2{
-    font-size: 2.5rem;
-    margin-left: 4%;
-    font-weight: 400;
-    margin-right: 20%;
-    margin-bottom: 2.4%;
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
 }
 
-.linkindication img{
-    width: 90%;
-    height: 30vh;
-    object-fit: cover;
+.introHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.linkindication h2{
-    color: #ffffff;
-    font-size: 2.5rem;
-    position: absolute;
-    margin-bottom: 1%;
+.mainTitle {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: #111111;
+  text-transform: uppercase;
+  line-height: 1.15;
+  margin: 0;
 }
 
-.linkindication{
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: start;
+.subtitle {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 400;
+  color: #444444;
+  line-height: 1.5;
+  margin: 0;
 }
 
-.linkindication img:hover{
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Card da Indicação Semanal */
+.indicationCard {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 220px;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-@media (max-width: 1200px) {
-
-    .container{
-        margin-top: 15%;
-    }
-    .container h1{
-        font-size: 300%;
-        margin-left: 2%;
-        margin-right: 2%;
-    }
-    .container h2{
-        font-size: 200%;
-        margin-left: 2%;
-        margin-right: 2%;
-    }
-    .linkindication img{
-        width: 80%;
-        height: 30vh;
-    }
-    .linkindication h2{
-        font-size: 1rem;
-        padding-left: 2%;
-    }
+.indicationCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
 }
 
-@media (max-width: 800px) {
-    .container{
-        margin-top: 20%;
-    }
-    .container img{
-        width: 90%;
-        height: 50vh;
-    }
-    .container h1{
-        font-size: 200%;
-        margin-left: 4%;
-        margin-right: 4%;
-    }
-    .container h2{
-        font-size: 150%;
-        margin-left: 4%;
-        margin-right: 4%;
-    }
-    .linkindication img{
-        width: 90%;
-        height: 13vh;
-    }
-    .linkindication h2{
-        font-size: 1rem;;
-    }
+.indicationCard:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 4px;
 }
 
-@media (max-width: 560px) {
-    .container{
-        margin-top: 20%;
-    }
-    .container img{
-        width: 60%;
-        height: 50vh;
-    }
-    .container h1{
-        font-size: 150%;
-        margin-left: 4%;
-        margin-right: 8%;
-    }
-    .container h2{
-        font-size: 120%;
-        margin-left: 4%;
-        margin-right: 8%;
-    }
-    .linkindication img{
-        width: 90%;
-        height: 20vh;
-    }
-    .linkindication h2{
-        font-size: 1rem;;
-    }
+.indicationImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.indicationCard:hover .indicationImage {
+  transform: scale(1.03);
+}
+
+.indicationOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.35) 60%,
+    transparent 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.25rem;
+  gap: 0.25rem;
+}
+
+.indicationBadge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #60a5fa;
+  letter-spacing: 0.05em;
+}
+
+.indicationTitle {
+  margin: 0;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Responsividade Tablet e Mobile */
+@media (max-width: 900px) {
+  .heroSection {
+    grid-template-columns: 1fr;
+    padding-top: 5.5rem;
+    gap: 2rem;
+  }
+
+  .imageHighlightWrapper {
+    height: clamp(260px, 45vh, 400px);
+  }
+
+  .indicationCard {
+    height: 180px;
+  }
 }
