@@ -1,10 +1,38 @@
-.footer{
-    background-color: black;
-    padding: 2%;
-    width: 100%;
-    font-size: 1rem;
-    color: #ffffff;
-    text-align: center;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: 100;
+.footer {
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 1.5rem 1rem;
+  margin-top: auto;
+  font-family: 'Lucida Sans', 'Lucida Grande', Geneva, Verdana, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer a {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+.footer a:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 1.25rem 0.75rem;
+    font-size: 0.85rem;
+  }
 }
