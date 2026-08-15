@@ -2,13 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Favorito from './contexts/Favorito';
+import FavoritoProvider from './contexts/Favorito';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Favorito>
+    {/* Link acessível invisível que aparece no primeiro TAB para pular a navegação */}
+    <a href="#main-content" className="skip-link">
+      Saltar para o conteúdo principal
+    </a>
+
+    <FavoritoProvider>
       <App />
-    </Favorito>
+    </FavoritoProvider>
   </React.StrictMode>
 );
